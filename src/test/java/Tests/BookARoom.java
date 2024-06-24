@@ -24,6 +24,8 @@ public class BookARoom extends Methods {
         homePage.selectRoomNumberOccupants();
         homePage.clickRoomSearchButton();
         hotelSelectionPage.clickOnRafflesLondonAtTheOWL();
+        rafflesPage.clickAcceptAllCookies();
+        Thread.sleep(4000);
         rafflesPage.selectConnorSuiteAndAddBreakfastInExtras();
     }
 }

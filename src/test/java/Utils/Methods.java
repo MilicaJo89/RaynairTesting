@@ -145,5 +145,4 @@ public class Methods {
         driver.findElement(xpath).click();
         driver.findElement(xpath).clear();
     }
-
 }

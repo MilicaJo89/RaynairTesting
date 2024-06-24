@@ -19,6 +19,10 @@ public class HotelSelectionPage extends Methods {
     public void clickOnRafflesLondonAtTheOWL() throws InterruptedException {
         Thread.sleep(2000);
         scrollDown();
+        Thread.sleep(2000);
+        scrollDown();
+        Thread.sleep(3000);
+        scrollDown();
         Thread.sleep(10000);
         scrollIntoViewAndClickItInvisible(Raffles);
     }

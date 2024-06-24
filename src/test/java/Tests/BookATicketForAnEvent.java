@@ -28,7 +28,5 @@ public class BookATicketForAnEvent {
         ticketSearchPage.clickCheckAvailabilityButton();
         Thread.sleep(3000);
         ticketSearchPage.clickSelectAndCheckoutButton();
-
     }
-
 }

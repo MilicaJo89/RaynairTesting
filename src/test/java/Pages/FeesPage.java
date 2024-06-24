@@ -28,11 +28,11 @@ public class FeesPage extends Methods {
     public By firstNameTextBox = By.xpath("//div//input[@autocomplete='given-name']");
     public By lastNameTextBox = By.xpath("//div//input[@autocomplete='family-name']");
     public By ContinueButton = By.xpath("//div//button[contains(.,' Continue ')]");
-    public By seat17F = By.xpath("//button[@id='seat-16A']");
+    public By seat17F = By.xpath("//button[@id='seat-16D']");
     public By nextFlightButton = By.xpath("//button[@data-ref='seats-action__button-next']");
     public By continueButton = By.xpath("//button[@class='passenger-carousel__cta passenger-carousel__cta--next ry-button--gradient-yellow']");
     public By sameseatsbutton = By.xpath("//span[@class='_container icon-16']");
-    public By anotherseat=By.xpath("//button[@id='seat-16A']");
+    public By anotherseat=By.xpath("//button[@id='seat-16D']");
     public By addfasttrack = By.xpath("//button[@data-ref='enhanced-takeover-beta-desktop__confirm-cta']");
     public By cabinbag = By.xpath("//label[@class='ry-radio-circle-button__label' and @for='ry-radio-button--1']");
     public By continuebagbutton = By.xpath("//button[@class='ry-button--gradient-yellow' and contains(.,' Continue')]");
@@ -114,12 +114,14 @@ public class FeesPage extends Methods {
         Thread.sleep(5000);
     }
 
-    public void handleSameSeatPopUp(){
+    public void handleSameSeatPopUp() throws InterruptedException {
+        Thread.sleep(3000);
         logger.info("Click on select same seats option");
         clickOnElement(sameseatsbutton);
     }
 
-    public void selectSeatOnFlightFromCorfuToNis(){
+    public void selectSeatOnFlightFromCorfuToNis() throws InterruptedException {
+        Thread.sleep(300);
         logger.info("Click another seat");
         scrollDown();
         clickOnElement(anotherseat);
@@ -157,21 +159,27 @@ public class FeesPage extends Methods {
     public void arrangeBusInCorfuOption() throws InterruptedException {
         logger.info("Click on bus to corfu option");
         clickOnElement(busstoCorfu);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         logger.info("Check return check box");
         clickOnElement(returnCheckBox2);
+        Thread.sleep(5000);
         logger.info("Click on + sign to add a passenger");
         clickOnElement(plussign);
+        Thread.sleep(3000);
         scrollDown();
+        Thread.sleep(5000);
         logger.info("Open from drop down menu");
         clickOnElement(clickfrom);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         logger.info("Select Airport option in the drop down menu");
         clickOnElement(chooseAirport);
+        Thread.sleep(5000);
         logger.info("Open destination drop down menu");
         clickOnElement(destinationdrop);
+        Thread.sleep(5000);
         logger.info("Select Corfu option in the drop down menu");
         clickOnElement(chooseCorfu);
+        Thread.sleep(5000);
         logger.info("Click add button");
         clickOnElement(clickadd);
     }

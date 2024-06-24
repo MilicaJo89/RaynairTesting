@@ -19,7 +19,20 @@ public class HireACar {
         homePage.clickHireCarButton();
         Thread.sleep(4000);
         carHirePage.inputInToINeedACarTextFieldDublin();
-
+        Thread.sleep(5000);
+        carHirePage.selectJune30thAsPickUpDate();
+        carHirePage.selectJuly10thAsDropOffDate();
+        carHirePage.select1200AsPickUpTime();
+        carHirePage.select1230AsDropOffTime();
+        carHirePage.clickLetsGoButton();
+        Thread.sleep(10000);
+        carHirePage.underTheTransmissionSelectAutomatic();
+        carHirePage.underTheCarSpecsSelectAirConditioning();
+        carHirePage.selectPremiumCarOption();
+        Thread.sleep(9000);
+        carHirePage.selectACarToHire();
+        Thread.sleep(5000);
+        carHirePage.clickContinueToBookButton();
+        carHirePage.clickGoToBookWithFullProtectionButton();
     }
-
 }
