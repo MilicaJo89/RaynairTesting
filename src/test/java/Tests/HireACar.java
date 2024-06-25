@@ -16,7 +16,7 @@ public class HireACar {
 
 
         homePage.siteLoading();
-        homePage.clickHireCarButton();
+        homePage.clickCarHireButton();
         Thread.sleep(4000);
         carHirePage.inputInToINeedACarTextFieldDublin();
         Thread.sleep(5000);
@@ -30,7 +30,7 @@ public class HireACar {
         carHirePage.underTheCarSpecsSelectAirConditioning();
         carHirePage.selectPremiumCarOption();
         Thread.sleep(9000);
-        carHirePage.selectACarToHire();
+        carHirePage.selectTheFirstCarInTheListHire();
         Thread.sleep(5000);
         carHirePage.clickContinueToBookButton();
         carHirePage.clickGoToBookWithFullProtectionButton();

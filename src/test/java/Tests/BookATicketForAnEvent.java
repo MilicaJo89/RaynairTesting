@@ -23,8 +23,7 @@ public class BookATicketForAnEvent {
         ticketSearchPage.clickDateDropdownMenu();
         ticketSearchPage.selectJune27th();
         Thread.sleep(4000);
-        ticketSearchPage.selectNumberOfTickets();
-        ticketSearchPage.selectNumberOfTickets();
+        ticketSearchPage.selectTwoTickets();
         ticketSearchPage.clickCheckAvailabilityButton();
         Thread.sleep(3000);
         ticketSearchPage.clickSelectAndCheckoutButton();

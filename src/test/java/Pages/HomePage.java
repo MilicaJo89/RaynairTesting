@@ -263,7 +263,7 @@ public class HomePage extends Methods {
         clickOnElement(xMarksTheSpot);
     }
 
-    public void clickOnFareFinder() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnFareFinder() throws InterruptedException {
         Thread.sleep(3000);
         logger.info("Click on the plan element");
         clickOnElement(plan);
@@ -289,7 +289,7 @@ public class HomePage extends Methods {
         scrollIntoViewAndClick(Done);
     }
 
-    public void clickOnRouteMap() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnRouteMap() throws InterruptedException {
         logger.info("Click on the plan element");
         clickOnElement(plan);
         Thread.sleep(3000);
@@ -315,7 +315,7 @@ public class HomePage extends Methods {
         scrollIntoViewAndClick(Done);
     }
 
-    public void clickOnDestination() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnDestinations() throws InterruptedException {
         logger.info("Click on the plan element");
         clickOnElement(plan);
         Thread.sleep(5000);
@@ -330,7 +330,7 @@ public class HomePage extends Methods {
         Thread.sleep(5000);
     }
 
-    public void clickOnTimetable() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnTimetable(WebDriver driver) throws InterruptedException {
         logger.info("Click on the plan element");
         clickOnElement(plan);
         Thread.sleep(5000);
@@ -349,11 +349,11 @@ public class HomePage extends Methods {
         logger.info("Timetable element is present");
         elementIsPresent(timetableElement);
         logger.info("Click <- to go back to home page");
-        goBack();
+        driver.navigate().to("https://www.ryanair.com/gb/en");
         Thread.sleep(5000);
     }
 
-    public void clickOnTrySomethingNew() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnTrySomewhereNew() throws InterruptedException {
         logger.info("Click on the plan element");
         clickOnElement(plan);
         Thread.sleep(5000);
@@ -378,7 +378,7 @@ public class HomePage extends Methods {
         scrollIntoViewAndClick(Done);
     }
 
-    public void clickGroupTravel() throws InterruptedException {
+    public void inThePlanMenuOptionClickGroupTravel() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -392,7 +392,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnTheOnlinePirate() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnTheOnlineTravelPirateScams() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -406,7 +406,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void customerTestimonials() throws InterruptedException {
+    public void inThePlanMenuOptionClickCustomerTestimonials() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -420,7 +420,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickFlightEssentials() throws InterruptedException {
+    public void inThePlanMenuOptionClickFlightEssentials() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -434,7 +434,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnFareBundles() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnFareBundles() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -448,7 +448,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnSearchCar() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnSearchCarHire() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -462,7 +462,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnSearchRooms() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnSearchRooms() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -476,7 +476,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnSearchEvents() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnSearchEventsAndActivities() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -490,7 +490,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnSearchParking() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnSearchParking() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -504,7 +504,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnPrivateTransfer() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnSearchPrivateTransfers() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -518,7 +518,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnBusAndTrains() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnSearchBusAndTrains() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -532,7 +532,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnGiftCard() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnRyanairGiftCards() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -546,7 +546,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnOnBoardServices() throws InterruptedException {
+    public void inThePlanMenuOptionClickOnOnboardServices() throws InterruptedException {
         logger.info("Click on the plan element");
         Thread.sleep(5000);
         clickOnElement(plan);
@@ -560,7 +560,7 @@ public class HomePage extends Methods {
         goBack();
     }
 
-    public void clickOnAustriaGerman() {
+    public void inTheLanguageMenuOptionClickOnAustriaGerman() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Austrian German button");
@@ -569,7 +569,7 @@ public class HomePage extends Methods {
         elementIsPresent(AustriaGermanElement);
     }
 
-    public void clickOnBelgiumDutch() {
+    public void inTheLanguageMenuOptionClickOnBelgiumDutch() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Belgium Dutch button");
@@ -578,7 +578,7 @@ public class HomePage extends Methods {
         elementIsPresent(BelgiumDutchElement);
     }
 
-    public void clickOnBelgiumFrench() {
+    public void inTheLanguageMenuOptionClickOnBelgiumFrench() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Belgium French button");
@@ -587,7 +587,7 @@ public class HomePage extends Methods {
         elementIsPresent(BelgiumFrenchElement);
     }
 
-    public void clickOnBosniaEnglish() {
+    public void inTheLanguageMenuOptionClickOnBosniaEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Bosnia English button");
@@ -596,7 +596,7 @@ public class HomePage extends Methods {
         elementIsPresent(BosniaEnglishElement);
     }
 
-    public void clickOnBulgariaBulgarian() {
+    public void inTheLanguageMenuOptionClickOnBulgariaBulgarian() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Bulgaria Bulgarian button");
@@ -605,7 +605,7 @@ public class HomePage extends Methods {
         elementIsPresent(BulgariaBulgarianElement);
     }
 
-    public void clickOnChinaChinese() {
+    public void inTheLanguageMenuOptionClickOnChinaChinese() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the China Chinese button");
@@ -614,7 +614,7 @@ public class HomePage extends Methods {
         elementIsPresent(ChinaChineseElement);
     }
 
-    public void clickOnCroatiaEnglish() {
+    public void inTheLanguageMenuOptionClickOnCroatiaEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Croatia English button");
@@ -623,7 +623,7 @@ public class HomePage extends Methods {
         elementIsPresent(CroatiaEnglishElement);
     }
 
-    public void clickOnCyprusEnglish() {
+    public void inTheLanguageMenuOptionClickOnCyprusEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Cyprus English button");
@@ -632,7 +632,7 @@ public class HomePage extends Methods {
         elementIsPresent(CyprusEnglishElement);
     }
 
-    public void clickOnCzechRepublicCzech() {
+    public void inTheLanguageMenuOptionClickOnCzechRepublicCzech() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Czech Republic Czech button");
@@ -641,7 +641,7 @@ public class HomePage extends Methods {
         elementIsPresent(CzechRepublicCzechElement);
     }
 
-    public void clickOnDenmarkDanish() {
+    public void inTheLanguageMenuOptionClickOnDenmarkDanish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Denmark Danish button");
@@ -650,7 +650,7 @@ public class HomePage extends Methods {
         elementIsPresent(DenmarkDanishElement);
     }
 
-    public void clickOnEstoniaEnglish() {
+    public void inTheLanguageMenuOptionClickOnEstoniaEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Estonia English button");
@@ -659,7 +659,7 @@ public class HomePage extends Methods {
         elementIsPresent(EstoniaEnglishElement);
     }
 
-    public void clickOnFinlandEnglish() {
+    public void inTheLanguageMenuOptionClickOnFinlandEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Finland English button");
@@ -668,7 +668,7 @@ public class HomePage extends Methods {
         elementIsPresent(FinlandEnglishElement);
     }
 
-    public void clickOnFranceFrench() {
+    public void inTheLanguageMenuOptionClickOnFranceFrench() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the France French button");
@@ -677,7 +677,7 @@ public class HomePage extends Methods {
         elementIsPresent(FranceFrenchElement);
     }
 
-    public void clickOnGermanyGerman() {
+    public void inTheLanguageMenuOptionClickOnGermanyGerman() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Germany German button");
@@ -686,7 +686,7 @@ public class HomePage extends Methods {
         elementIsPresent(GermanyGermanElement);
     }
 
-    public void clickOnGreatBritainEnglish() {
+    public void inTheLanguageMenuOptionClickOnGreatBritainEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Great Britain English button");
@@ -695,7 +695,7 @@ public class HomePage extends Methods {
         elementIsPresent(GreatBritainEnglishElement);
     }
 
-    public void clickOnGreeceGreek() {
+    public void inTheLanguageMenuOptionClickOnGreeceGreek() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Greece Greek button");
@@ -704,7 +704,7 @@ public class HomePage extends Methods {
         elementIsPresent(GreeceGreekElement);
     }
 
-    public void clickOnHungaryHungarian() {
+    public void inTheLanguageMenuOptionClickOnHungaryHungarian() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Hungary Hungarian button");
@@ -713,7 +713,7 @@ public class HomePage extends Methods {
         elementIsPresent(HungaryHungarianElement);
     }
 
-    public void clickOnIrelandEnglish() {
+    public void inTheLanguageMenuOptionClickOnIrelandEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Ireland English button");
@@ -722,7 +722,7 @@ public class HomePage extends Methods {
         elementIsPresent(IrelandEnglishElement);
     }
 
-    public void clickOnItalyItalian() {
+    public void inTheLanguageMenuOptionClickOnItalyItalian() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Italy Italian button");
@@ -731,7 +731,7 @@ public class HomePage extends Methods {
         elementIsPresent(ItalyItalianElement);
     }
 
-    public void clickOnLatviaEnglish() {
+    public void inTheLanguageMenuOptionClickOnLatviaEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click and the Latvia English button");
@@ -740,7 +740,7 @@ public class HomePage extends Methods {
         elementIsPresent(LatviaEnglishElement);
     }
 
-    public void clickOnLatviaLatvian() {
+    public void inTheLanguageMenuOptionClickOnLatviaLatvian() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Latvia Latvian button");
@@ -749,7 +749,7 @@ public class HomePage extends Methods {
         elementIsPresent(LatviaLatvianElement);
     }
 
-    public void clickOnLithuaniaLithuanian() {
+    public void inTheLanguageMenuOptionClickOnLithuaniaLithuanian() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Lithuania Lithuanian button");
@@ -758,7 +758,7 @@ public class HomePage extends Methods {
         elementIsPresent(LithuaniaLithuanianElement);
     }
 
-    public void clickOnLuxembourgFrench() {
+    public void inTheLanguageMenuOptionClickOnLuxembourgFrench() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Luxembourg French button");
@@ -767,7 +767,7 @@ public class HomePage extends Methods {
         elementIsPresent(LuxembourgFrenchElement);
     }
 
-    public void clickOnMaltaEnglish() {
+    public void inTheLanguageMenuOptionClickOnMaltaEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Malta English button");
@@ -776,7 +776,7 @@ public class HomePage extends Methods {
         elementIsPresent(MaltaEnglishElement);
     }
 
-    public void clickOnMontenegroEnglish() {
+    public void inTheLanguageMenuOptionClickOnMontenegroEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Montenegro English button");
@@ -785,7 +785,7 @@ public class HomePage extends Methods {
         elementIsPresent(MontenegroEnglishElement);
     }
 
-    public void clickOnMoroccoFrench() {
+    public void inTheLanguageMenuOptionClickOnMoroccoFrench() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Morocco French button");
@@ -794,7 +794,7 @@ public class HomePage extends Methods {
         elementIsPresent(MoroccoFrenchElement);
     }
 
-    public void clickOnNetherlandsDutch() {
+    public void inTheLanguageMenuOptionClickOnNetherlandsDutch() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Netherlands Dutch button");
@@ -803,7 +803,7 @@ public class HomePage extends Methods {
         elementIsPresent(NetherlandsDutchElement);
     }
 
-    public void clickOnNorwayNorwegian() {
+    public void inTheLanguageMenuOptionClickOnNorwayNorwegian() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Norway Norwegian button");
@@ -812,7 +812,7 @@ public class HomePage extends Methods {
         elementIsPresent(NorwayNorwegianElement);
     }
 
-    public void clickOnPolandPolish() {
+    public void inTheLanguageMenuOptionClickOnPolandPolish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Poland Polish button");
@@ -821,7 +821,7 @@ public class HomePage extends Methods {
         elementIsPresent(PolandPolishElement);
     }
 
-    public void clickOnPortugalPortuguese() {
+    public void inTheLanguageMenuOptionClickOnPortugalPortuguese() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Portugal Portuguese button");
@@ -830,7 +830,7 @@ public class HomePage extends Methods {
         elementIsPresent(PortugalPortugueseElement);
     }
 
-    public void clickOnRomaniaRomanian() {
+    public void inTheLanguageMenuOptionClickOnRomaniaRomanian() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click in the Romania Romanian button");
@@ -839,7 +839,7 @@ public class HomePage extends Methods {
         elementIsPresent(RomaniaRomanianElement);
     }
 
-    public void clickOnSerbiaEnglish() {
+    public void inTheLanguageMenuOptionClickOnSerbiaEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Serbia English button");
@@ -848,7 +848,7 @@ public class HomePage extends Methods {
         elementIsPresent(SerbiaEnglishElement);
     }
 
-    public void clickOnSlovakiaEnglish() {
+    public void inTheLanguageMenuOptionClickOnSlovakiaEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Slovakia English button");
@@ -857,7 +857,7 @@ public class HomePage extends Methods {
         elementIsPresent(SlovakiaEnglishElement);
     }
 
-    public void clickOnSpainCatalan() {
+    public void inTheLanguageMenuOptionClickOnSpainCatalan() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Spain Catalan button");
@@ -866,7 +866,7 @@ public class HomePage extends Methods {
         elementIsPresent(SpainCatalanElement);
     }
 
-    public void clickOnSpainSpanish() {
+    public void inTheLanguageMenuOptionClickOnSpainSpanish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Spain Spanish button");
@@ -875,7 +875,7 @@ public class HomePage extends Methods {
         elementIsPresent(SpainSpanishElement);
     }
 
-    public void clickOnSwedenSwedish() {
+    public void inTheLanguageMenuOptionClickOnSwedenSwedish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Sweden Swedish button");
@@ -884,7 +884,7 @@ public class HomePage extends Methods {
         elementIsPresent(SwedenSwedishElement);
     }
 
-    public void clickOnTurkeyEnglish() {
+    public void inTheLanguageMenuOptionClickOnTurkeyEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Turkey English button");
@@ -893,7 +893,7 @@ public class HomePage extends Methods {
         elementIsPresent(TurkeyEnglishElement);
     }
 
-    public void clickOnUkraineUkrainian() {
+    public void inTheLanguageMenuOptionClickOnUkraineUkrainian() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the Ukraine Ukrainian button");
@@ -902,7 +902,7 @@ public class HomePage extends Methods {
         elementIsPresent(UkraineUkrainianElement);
     }
 
-    public void clickOnUnitedStatesEnglish() {
+    public void inTheLanguageMenuOptionClickOnUnitedStatesEnglish() {
         logger.info("Click on the Language button");
         clickOnElement(languageMenu);
         logger.info("Click on the United States English button");
@@ -911,7 +911,7 @@ public class HomePage extends Methods {
         elementIsPresent(UnitedStatesEnglishElement);
     }
 
-    public void clickOnLogoForRyanAir() {
+    public void clickOnLogoForRyanAirInTheUpperLeftCorner() {
         logger.info("Click on the Ryanair logo");
         clickOnElement(logoForRyanAir);
     }
@@ -923,7 +923,7 @@ public class HomePage extends Methods {
         clickOnElement(returnCheckBox);
     }
 
-    public void selectNisInFromOption(){
+    public void inTheFromFieldSelectNisInFromOption(){
         logger.info("Open from dropdown menu");
         clickOnElement(fromDropdown);
         logger.info("In the countries select Serbia");
@@ -932,7 +932,7 @@ public class HomePage extends Methods {
         clickOnElement(clickNis);
     }
 
-    public void selectCorfuInDestination(){
+    public void inTheToFieldSelectCorfu(){
         logger.info("Select Greece in the destination dropdown menu");
         clickOnElement(clickGreece);
         logger.info("Select Corfu in the airport list");
@@ -940,7 +940,7 @@ public class HomePage extends Methods {
     }
 
     public void selectDatesOfTravel(){
-        logger.info("select june 30 as travel day");
+        logger.info("select june 30 as depart day");
         clickOnElement(selectJune30th);
         logger.info("Select July 28 as return day");
         clickOnElement(selectJuly28th);
@@ -966,7 +966,7 @@ public class HomePage extends Methods {
         Thread.sleep(5000);
     }
 
-    public void selectLondonAsDestination() throws IOException, InterruptedException {
+    public void inputLondonAsDestination() throws IOException, InterruptedException {
         clearTextBox(destinationTextBox);
         logger.info("In the destination text box input London");
         clickOnElement(destinationTextBox);
@@ -989,7 +989,7 @@ public class HomePage extends Methods {
         Thread.sleep(5000);
     }
 
-    public void selectRoomNumberOccupants() throws InterruptedException {
+    public void selectNumberOfRoomOccupants() throws InterruptedException {
         logger.info("Click + sign to add additional passenger");
         Thread.sleep(4000);
         scrollIntoViewAndClickItInvisible(passengerAdd);
@@ -1016,7 +1016,7 @@ public class HomePage extends Methods {
 
 
     //car hire methods
-    public void clickHireCarButton(){
+    public void clickCarHireButton(){
         clickOnElement(clickCarHire);
     }
 }

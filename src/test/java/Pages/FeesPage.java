@@ -28,11 +28,11 @@ public class FeesPage extends Methods {
     public By firstNameTextBox = By.xpath("//div//input[@autocomplete='given-name']");
     public By lastNameTextBox = By.xpath("//div//input[@autocomplete='family-name']");
     public By ContinueButton = By.xpath("//div//button[contains(.,' Continue ')]");
-    public By seat17F = By.xpath("//button[@id='seat-16D']");
+    public By seat17F = By.xpath("//button[@id='seat-16C']");
     public By nextFlightButton = By.xpath("//button[@data-ref='seats-action__button-next']");
     public By continueButton = By.xpath("//button[@class='passenger-carousel__cta passenger-carousel__cta--next ry-button--gradient-yellow']");
     public By sameseatsbutton = By.xpath("//span[@class='_container icon-16']");
-    public By anotherseat=By.xpath("//button[@id='seat-16D']");
+    public By anotherseat=By.xpath("//button[@id='seat-16C']");
     public By addfasttrack = By.xpath("//button[@data-ref='enhanced-takeover-beta-desktop__confirm-cta']");
     public By cabinbag = By.xpath("//label[@class='ry-radio-circle-button__label' and @for='ry-radio-button--1']");
     public By continuebagbutton = By.xpath("//button[@class='ry-button--gradient-yellow' and contains(.,' Continue')]");
@@ -63,7 +63,7 @@ public class FeesPage extends Methods {
 
 
 
-    public void selectPlusFlightOption() throws InterruptedException {
+    public void selectPlusInTheChooseYourFare() throws InterruptedException {
         logger.info("Click plus option");
         Thread.sleep(3000);
         clickOnElement(plusOption);
@@ -139,7 +139,7 @@ public class FeesPage extends Methods {
         Thread.sleep(8000);
     }
 
-    public void selectCabinBag(){
+    public void selectPriorityPlusTwoCabinBags(){
         logger.info("click cabin bag ");
         clickOnElement(cabinbag);
         scrollDown();

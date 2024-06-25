@@ -19,9 +19,9 @@ public class BookARoom extends Methods {
 
         homePage.siteLoading();
         homePage.clickHotelsButton();
-        homePage.selectLondonAsDestination();
+        homePage.inputLondonAsDestination();
         homePage.selectDatesOfRoomBooking();
-        homePage.selectRoomNumberOccupants();
+        homePage.selectNumberOfRoomOccupants();
         homePage.clickRoomSearchButton();
         hotelSelectionPage.clickOnRafflesLondonAtTheOWL();
         rafflesPage.clickAcceptAllCookies();

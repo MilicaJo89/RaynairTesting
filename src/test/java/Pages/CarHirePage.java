@@ -86,7 +86,7 @@ public class CarHirePage extends Methods {
         scrollIntoViewAndClickIt(premiumCar);
     }
 
-    public void selectACarToHire(){
+    public void selectTheFirstCarInTheListHire(){
         scrollIntoViewAndClickIt(viewDeal);
     }
 

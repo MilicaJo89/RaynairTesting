@@ -18,13 +18,14 @@ public class BookingAFlightFromNisToCorfu extends Methods {
 
         homePage.siteLoading();
         homePage.checkTheReturnCheckBox();
-        homePage.selectNisInFromOption();
-        homePage.selectCorfuInDestination();
+        homePage.inTheFromFieldSelectNisInFromOption();
+        homePage.inTheToFieldSelectCorfu();
         homePage.selectDatesOfTravel();
         homePage.selectPassengers();
         homePage.clickSearchButton();
+
         feesPage.selectFlights(Methods.driver);
-        feesPage.selectPlusFlightOption();
+        feesPage.selectPlusInTheChooseYourFare();
         feesPage.clickLoginLater();
         feesPage.selectMsInTheTitleDropdownMenu();
         feesPage.inputPassengerInformation();
@@ -34,7 +35,7 @@ public class BookingAFlightFromNisToCorfu extends Methods {
         feesPage.selectSeatOnFlightFromCorfuToNis();
         feesPage.clickOnFlightsContinueButton();
         feesPage.clickAddFastTrack();
-        feesPage.selectCabinBag();
+        feesPage.selectPriorityPlusTwoCabinBags();
         Thread.sleep(5000);
         feesPage.clickBagContinueButton();
         feesPage.arrangeBusInCorfuOption();

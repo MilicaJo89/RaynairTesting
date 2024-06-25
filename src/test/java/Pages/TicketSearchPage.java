@@ -44,10 +44,7 @@ public class TicketSearchPage extends Methods {
     }
 
     public void selectWhiskeyTastingTour(){
-        scrollDown();
-        scrollDown();
-        scrollDown();
-        clickOnElement(WhiskeyTastingTourButton);
+        scrollIntoViewAndClickIt(WhiskeyTastingTourButton);
     }
 
     public void clickDateDropdownMenu(){
@@ -58,8 +55,9 @@ public class TicketSearchPage extends Methods {
         clickOnElement(June27th);
     }
 
-    public void selectNumberOfTickets(){
-        scrollIntoViewAndClickItInvisible(NumberOfTicketsSelector);
+    public void selectTwoTickets(){
+        scrollIntoViewAndClickIt(NumberOfTicketsSelector);
+        scrollIntoViewAndClickIt(NumberOfTicketsSelector);
     }
 
     public void clickCheckAvailabilityButton(){
