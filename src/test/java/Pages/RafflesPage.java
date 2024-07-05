@@ -4,15 +4,15 @@ import Utils.Methods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class RafflesPage extends Methods {
+public class RafflesPage{
 
     public WebDriver driver;
+    public Methods methods;
 
     public RafflesPage rafflesPage (WebDriver driver) {
         this.driver=driver;
         return this;
     }
-
 
     //paths
     public By ConnorSuite = By.xpath("//button[@aria-label='View all photos for Suite, Corner']");
@@ -21,26 +21,17 @@ public class RafflesPage extends Methods {
     public By AcceptAllCookies = By.xpath("//button[@id='onetrust-accept-btn-handler']");
 
     public void selectConnorSuiteAndAddBreakfastInExtras() throws InterruptedException {
-        driverSwitch();
+        methods.driverSwitch();
         Thread.sleep(3000);
-        scrollDown();
-        scrollIntoViewAndClickItInvisible(ConnorSuite);
+        methods.scrollDown();
+        methods.scrollIntoViewAndClickItUnreachableElement(ConnorSuite,"Connor Suite");
+        Thread.sleep(5000);
+        methods.scrollIntoViewAndClickItUnreachableElement(breakfast,"breakfast in the extras in the Connor suite reservation pop up window");
         Thread.sleep(3000);
-        Thread.sleep(3000);
-        scrollIntoViewAndClickItInvisible(breakfast);
-        Thread.sleep(3000);
-        scrollIntoViewAndClickItInvisible(reserve);
+        methods.scrollIntoViewAndClickItUnreachableElement(reserve,"Reserve button");
     }
-
     public void clickAcceptAllCookies(){
-        clickOnElement(AcceptAllCookies);
+        Methods.logger.info("Click Accept all cookies button");
+        methods.clickOnElement(AcceptAllCookies);
     }
-
-
-
-
-
-
-
-
 }

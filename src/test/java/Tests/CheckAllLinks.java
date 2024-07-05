@@ -1,23 +1,25 @@
 package Tests;
 
 import Pages.HomePage;
+import Pages.NavigationMenuPage;
 import Utils.Methods;
 import org.testng.annotations.Test;
 
-public class CheckAllLinks extends Methods {
-
-
+public class CheckAllLinks {
+    
     @Test
     public void TestingAllLinks() throws InterruptedException {
 
-        HomePage homePage= new HomePage();
+        HomePage homePage = new HomePage();
+        NavigationMenuPage navigationMenuPage = new NavigationMenuPage();
 
         homePage.siteLoading();
-        homePage.clickHelpButton();
+        navigationMenuPage.clickHelpButton();
         homePage.clickSpecialAssistance();
-        homePage.clickOnMyBooking();
-        homePage.clickOnSignUpButton();
-        homePage.clickOnLoginButton();
+        navigationMenuPage.clickOnMyBooking();
+        navigationMenuPage.clickOnSignUpButton();
+        navigationMenuPage.clickOnLoginButton();
+
         //plan drop down menu tests
         homePage.inThePlanMenuOptionClickOnFareFinder();
         homePage.inThePlanMenuOptionClickOnRouteMap();
@@ -37,45 +39,49 @@ public class CheckAllLinks extends Methods {
         homePage.inThePlanMenuOptionClickOnSearchBusAndTrains();
         homePage.inThePlanMenuOptionClickOnRyanairGiftCards();
         homePage.inThePlanMenuOptionClickOnOnboardServices();
-        homePage.inTheLanguageMenuOptionClickOnAustriaGerman();
-        homePage.inTheLanguageMenuOptionClickOnBelgiumDutch();
-        homePage.inTheLanguageMenuOptionClickOnBelgiumFrench();
-        homePage.inTheLanguageMenuOptionClickOnBosniaEnglish();
-        homePage.inTheLanguageMenuOptionClickOnBulgariaBulgarian();
-        homePage.inTheLanguageMenuOptionClickOnChinaChinese();
-        homePage.inTheLanguageMenuOptionClickOnCroatiaEnglish();
-        homePage.inTheLanguageMenuOptionClickOnCyprusEnglish();
-        homePage.inTheLanguageMenuOptionClickOnCzechRepublicCzech();
-        homePage.inTheLanguageMenuOptionClickOnDenmarkDanish();
-        homePage.inTheLanguageMenuOptionClickOnEstoniaEnglish();
-        homePage.inTheLanguageMenuOptionClickOnFinlandEnglish();
-        homePage.inTheLanguageMenuOptionClickOnFranceFrench();
-        homePage.inTheLanguageMenuOptionClickOnGermanyGerman();
-        homePage.inTheLanguageMenuOptionClickOnGreatBritainEnglish();
-        homePage.inTheLanguageMenuOptionClickOnGreeceGreek();
-        homePage.inTheLanguageMenuOptionClickOnHungaryHungarian();
-        homePage.inTheLanguageMenuOptionClickOnIrelandEnglish();
-        homePage.inTheLanguageMenuOptionClickOnItalyItalian();
-        homePage.inTheLanguageMenuOptionClickOnLatviaEnglish();
-        homePage.inTheLanguageMenuOptionClickOnLatviaLatvian();
-        homePage.inTheLanguageMenuOptionClickOnLithuaniaLithuanian();
-        homePage.inTheLanguageMenuOptionClickOnLuxembourgFrench();
-        homePage.inTheLanguageMenuOptionClickOnMaltaEnglish();
-        homePage.inTheLanguageMenuOptionClickOnMontenegroEnglish();
-        homePage.inTheLanguageMenuOptionClickOnMoroccoFrench();
-        homePage.inTheLanguageMenuOptionClickOnNetherlandsDutch();
-        homePage.inTheLanguageMenuOptionClickOnNorwayNorwegian();
-        homePage.inTheLanguageMenuOptionClickOnPolandPolish();
-        homePage.inTheLanguageMenuOptionClickOnPortugalPortuguese();
-        homePage.inTheLanguageMenuOptionClickOnRomaniaRomanian();
-        homePage.inTheLanguageMenuOptionClickOnSerbiaEnglish();
-        homePage.inTheLanguageMenuOptionClickOnSlovakiaEnglish();
-        homePage.inTheLanguageMenuOptionClickOnSpainCatalan();
-        homePage.inTheLanguageMenuOptionClickOnSpainSpanish();
-        homePage.inTheLanguageMenuOptionClickOnSwedenSwedish();
-        homePage.inTheLanguageMenuOptionClickOnTurkeyEnglish();
-        homePage.inTheLanguageMenuOptionClickOnUkraineUkrainian();
-        homePage.inTheLanguageMenuOptionClickOnUnitedStatesEnglish();
-        homePage.clickOnLogoForRyanAirInTheUpperLeftCorner();
+
+        //language menu testing
+        homePage.inTheLanguageMenuOption("austria");
+        homePage.inTheLanguageMenuOption("belgium dutch");
+        homePage.inTheLanguageMenuOption("belgium french");
+        homePage.inTheLanguageMenuOption("bosnia");
+        homePage.inTheLanguageMenuOption("bulgaria");
+        homePage.inTheLanguageMenuOption("china");
+        homePage.inTheLanguageMenuOption("croatia");
+        homePage.inTheLanguageMenuOption("cyprus");
+        homePage.inTheLanguageMenuOption("czech");
+        homePage.inTheLanguageMenuOption("denmark");
+        homePage.inTheLanguageMenuOption("estonia");
+        homePage.inTheLanguageMenuOption("finland");
+        homePage.inTheLanguageMenuOption("france");
+        homePage.inTheLanguageMenuOption("germany");
+        homePage.inTheLanguageMenuOption("great britain");
+        homePage.inTheLanguageMenuOption("greece");
+        homePage.inTheLanguageMenuOption("hungary");
+        homePage.inTheLanguageMenuOption("ireland");
+        homePage.inTheLanguageMenuOption("italy");
+        homePage.inTheLanguageMenuOption("latvia english");
+        homePage.inTheLanguageMenuOption("latvia latvian");
+        homePage.inTheLanguageMenuOption("lithuania");
+        homePage.inTheLanguageMenuOption("luxembourg");
+        homePage.inTheLanguageMenuOption("malta");
+        homePage.inTheLanguageMenuOption("montenegro");
+        homePage.inTheLanguageMenuOption("morocco");
+        homePage.inTheLanguageMenuOption("netherlands");
+        homePage.inTheLanguageMenuOption("norway");
+        homePage.inTheLanguageMenuOption("poland");
+        homePage.inTheLanguageMenuOption("portugal");
+        homePage.inTheLanguageMenuOption("romania");
+        homePage.inTheLanguageMenuOption("serbia");
+        homePage.inTheLanguageMenuOption("slovakia");
+        homePage.inTheLanguageMenuOption("spain catalan");
+        homePage.inTheLanguageMenuOption("spain spanish");
+        homePage.inTheLanguageMenuOption("sweden");
+        homePage.inTheLanguageMenuOption("turkey");
+        homePage.inTheLanguageMenuOption("ukraine");
+        homePage.inTheLanguageMenuOption("united states");
+
+        navigationMenuPage.clickOnLogoForRyanAirInTheUpperLeftCorner();
+
     }
 }

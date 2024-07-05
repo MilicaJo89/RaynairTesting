@@ -3,20 +3,17 @@ package Pages;
 import Utils.Methods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import java.io.IOException;
 
-
-public class HomePage extends Methods {
-
+public class HomePage {
 
     public WebDriver driver;
+    public Methods methods = new Methods();
 
     public HomePage homePage(WebDriver driver) {
         this.driver=driver;
         return this;
     }
-
 
     //paths for flight from nis to corfu
     public By returnCheckBox = By.xpath("//label[@class='ry-radio-circle-button__label']");
@@ -30,34 +27,21 @@ public class HomePage extends Methods {
     public By checkPassenger = By.xpath("//div[contains(.,' 1 ')]");
     public By buttonDone = By.xpath("//button[@class='passengers__confirm-button ry-button--anchor-blue ry-button--anchor']");
     public By searchButton = By.xpath("//button[@class='flight-search-widget__start-search-cta ng-tns-c983940023-3 ry-button--gradient-yellow']");
-
-
     //paths for all links
-    public By clickHelp = By.xpath("//span[@class='ng-star-inserted' and contains(.,'Help ')]");
     public By YesIAgree = By.xpath("//button[@class='cookie-popup-with-overlay__button-settings']");
     public By AllowAll = By.xpath("//button[@class='cookies-details__allow-all-button ry-button--gradient-blue ng-star-inserted']");
     public By Done = By.xpath("//button[@class='cookies-details__done-button ry-button--gradient-yellow ng-star-inserted']");
     public By specialAsistance = By.xpath("//a[@aria-label='Assistance']");
-    public By myBooking = By.xpath("//button[@class='ry-button--anchor-white ry-button--anchor']");
-    public By signUp = By.xpath("//button[@class='ry-button--anchor-white ry-button--anchor' and contains(.,' Sign up')]");
-    public By xMarksTheSpot = By.xpath("//button//icon[@iconid='glyphs/close-takeover']");
-    public By logIn = By.xpath("//button[@class='ry-button--anchor-white ry-button--anchor' and contains(.,' Log in')]");
-    public By query = By.xpath("//input[@id='query']");
-    public By emailElement = By.xpath("//div[@class='titles']");
-    public By signInElement = By.xpath("//input[@class='body-l-lg body-l-sm date-placeholder invisible-background']");
     public By plan = By.xpath("//span[contains(.,'Plan ')]");
     public By fareFinder = By.xpath("//a[@aria-label='Fare Finder']");
-    public By cookieprivacy = By.xpath("//button[@class='cookie-popup-with-overlay__button']");
     public By cheapFlightsTitle = By.xpath("//h1[@class='row-fares-search-title']");
     public By privacyButtonHomePage = By.xpath("//button[@class='cookie-popup-with-overlay__button-settings']");
     public By RouteMap = By.xpath("//a[@aria-label='Route map']");
-    public By routeMapPrivacy = By.xpath("//button[@class='cookie-popup-with-overlay__button']");
     public By routeElement = By.xpath("//div[@class='searchbox-label-departures']");
     public By Destination = By.xpath("//a[@aria-label='Destinations']");
     public By DestinationElement = By.xpath("//h1[@class='seo-hero-image-title']");
     public By Timetable = By.xpath("//a[@aria-label='Timetable']");
     public By timetableElement = By.xpath("//h1[@class='timetable-header title-xl-lg']");
-    public By timetableprivacy = By.xpath("//button[@class='cookie-popup-with-overlay__button-settings']");
     public By TrySomethingNew = By.xpath("//a[@aria-label='Try Somewhere New']");
     public By somethingPrivacy = By.xpath("//button[@class='cookie-popup-with-overlay__button']");
     public By somethingElement = By.xpath("//h1[@class='container te-primary-title fadeInUp']");
@@ -166,9 +150,6 @@ public class HomePage extends Methods {
     public By UkraineUkrainianElement = By.xpath("//button[contains(.,' Зареєструватися')]");
     public By UnitedStatesEnglish = By.xpath("//a[@href='/us/en']");
     public By UnitedStatesEnglishElement = By.xpath("//button[contains(.,' Sign up')]");
-    public By logoForRyanAir = By.xpath("//div[@class='common-header__logo']");
-
-
     //paths for room booking
     public By HotelsButton = By.xpath("//div[@class='tab-text ng-star-inserted' and contains(.,'hotels')]");
     public By destinationTextBox = By.xpath("//input[@id='input-button__locations-or-properties']");
@@ -179,844 +160,420 @@ public class HomePage extends Methods {
     public By passengerAdd = By.xpath("//div[@data-ref='counter.counter__increment']");
     public By done = By.xpath("//button[@class='rooms_done-button ry-button--anchor-blue ry-button--anchor']");
     public By SearchButton = By.xpath("//button[@class='rooms-search-widget__start-search ry-button--gradient-yellow']");
-
-
-
     //paths for event booking
     public By clickEvents= By.xpath("//div[@class='tab-text ng-star-inserted' and contains(.,'Events & Activities')]");
-
     //paths for car hire
     public By clickCarHire = By.xpath("//div[@class='tab-text ng-star-inserted' and contains(.,'Car Hire')]");
 
-
-
     public void siteLoading() throws InterruptedException {
-        logger.info("Site opens");
-        setUp();
-        Thread.sleep(3000);
-        logger.info("Pop up appears and click button Yes,I Agree");
-        clickOnElement(YesIAgree);
+        Methods.logger.info("Site opens");
+        methods.setUp();
         Thread.sleep(5000);
-        logger.info("Click Allow all in the cookies privacy pop up");
-        scrollIntoViewAndClick(AllowAll);
+        Methods.logger.info("Pop up appears and click button Yes,I Agree");
+        methods.clickOnElement(YesIAgree);
         Thread.sleep(5000);
-        logger.info("Click Done button in the cookies privacy pop up");
-        scrollIntoViewAndClick(Done);
+        methods.scrollIntoViewAndClick(AllowAll,"allow all in the cookies privacy pop up");
+        Thread.sleep(5000);
+        methods.scrollIntoViewAndClick(Done,"Done button in the cookies privacy pop up");
     }
 
-    public void clickHelpButton() throws InterruptedException {
-        logger.info("Click Help");
-        clickOnElement(clickHelp);
-        Thread.sleep(3000);
-        logger.info("Driver switches pages");
-        driverSwitch();
-        logger.info("Help page element is present");
-        elementIsPresent(query);
-        logger.info("Driver switches pages");
-        driverSwitchBack();
-        logger.info("Close the tab window");
-        closeTab();
-    }
+
 
     public void clickSpecialAssistance() throws InterruptedException {
-        logger.info("Click on the Special Assistance element");
-        clickOnElement(specialAsistance);
+        Methods.logger.info("Click on the Special Assistance element");
+        methods.clickOnElement(specialAsistance);
         Thread.sleep(5000);
-        logger.info("Driver switches pages");
-        driverSwitch();
-        logger.info("Check url link");
-        checkUrlLink();
-        logger.info("Driver switches pages");
-        driverSwitchBack();
-        logger.info("Close the tab window");
-        closeTab();
+        methods.driverSwitch();
+        Methods.logger.info("Check url link");
+        methods.checkUrlLink();
+        methods.driverSwitchBack();
+        methods.closeTab();
         Thread.sleep(5000);
     }
-
-    public void clickOnMyBooking() throws InterruptedException {
-        logger.info("Click on the myBooking element");
-        clickOnElement(myBooking);
-        Thread.sleep(5000);
-        logger.info("Email element is present");
-        elementIsPresent(emailElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
-    }
-
-    public void clickOnSignUpButton() throws InterruptedException {
-        logger.info("Click sign up element");
-        clickOnElement(signUp);
-        logger.info("Element is present");
-        elementIsPresent(signInElement);
-        Thread.sleep(3000);
-        logger.info("Click X to close the pop up window");
-        clickOnElement(xMarksTheSpot);
-    }
-
-    public void clickOnLoginButton() throws InterruptedException {
-        logger.info("Click Login button");
-        clickOnElement(logIn);
-        logger.info("Login element is present");
-        elementIsPresent(signInElement);
-        Thread.sleep(3000);
-        logger.info("Click X to close the pop up window");
-        clickOnElement(xMarksTheSpot);
-    }
-
     public void inThePlanMenuOptionClickOnFareFinder() throws InterruptedException {
         Thread.sleep(3000);
-        logger.info("Click on the plan element");
-        clickOnElement(plan);
+        Methods.logger.info("Click on the plan element");
+        methods.clickOnElement(plan);
         Thread.sleep(3000);
-        logger.info("Click on FareFinder");
-        clickOnElement(fareFinder);
+        Methods.logger.info("Click on FareFinder");
+        methods.clickOnElement(fareFinder);
         Thread.sleep(5000);
-        logger.info("Click on cookie privacy");
-        clickOnElement(cookieprivacy);
-        Thread.sleep(5000);
-        logger.info("Cheap flights element is present");
-        elementIsPresent(cheapFlightsTitle);
+        Methods.logger.info("Cheap flights element is present");
+        methods.elementIsPresent(cheapFlightsTitle);
         Thread.sleep(3000);
-        logger.info("Click <- to go back to home page");
-        goBack();
-        logger.info("Click on home page privacy button");
-        clickOnElement(privacyButtonHomePage);
-        Thread.sleep(5000);
-        logger.info("Click allow all button");
-        scrollIntoViewAndClick(AllowAll);
-        Thread.sleep(5000);
-        logger.info("Click Done button in the cookies privacy pop up");
-        scrollIntoViewAndClick(Done);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnRouteMap() throws InterruptedException {
-        logger.info("Click on the plan element");
-        clickOnElement(plan);
+        Methods.logger.info("Click on the plan element");
+        methods.clickOnElement(plan);
         Thread.sleep(3000);
-        logger.info("Click on Route map element");
-        clickOnElement(RouteMap);
-        Thread.sleep(3000);
-        logger.info("Click on the route privacy button");
-        clickOnElement(routeMapPrivacy);
+        Methods.logger.info("Click on Route map element");
+        methods.clickOnElement(RouteMap);
         Thread.sleep(5000);
-        logger.info("Route Map element is present");
-        elementIsPresent(routeElement);
+        Methods.logger.info("Route Map element is present");
+        methods.elementIsPresent(routeElement);
         Thread.sleep(4000);
-        logger.info("Click <- to go back to home page");
-        goBack();
-        Thread.sleep(5000);
-        logger.info("Click on home page privacy button");
-        clickOnElement(privacyButtonHomePage);
-        Thread.sleep(5000);
-        logger.info("Click allow all button");
-        scrollIntoViewAndClick(AllowAll);
-        Thread.sleep(5000);
-        logger.info("Click Done button in the cookies privacy pop up");
-        scrollIntoViewAndClick(Done);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnDestinations() throws InterruptedException {
-        logger.info("Click on the plan element");
-        clickOnElement(plan);
+        Methods.logger.info("Click on the plan element");
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on Destination button");
-        clickOnElement(Destination);
+        Methods.logger.info("Click on Destination button");
+        methods.clickOnElement(Destination);
         Thread.sleep(5000);
-        logger.info("Destination element is present");
-        elementIsPresent(DestinationElement);
-        Thread.sleep(5000);
-        logger.info("Click <- to go back to home page");
-        goBack();
-        Thread.sleep(5000);
+        Methods.logger.info("Destination element is present");
+        methods.elementIsPresent(DestinationElement);
+        Thread.sleep(4000);
+        methods.goBack();
+        Thread.sleep(4000);
     }
 
     public void inThePlanMenuOptionClickOnTimetable(WebDriver driver) throws InterruptedException {
-        logger.info("Click on the plan element");
-        clickOnElement(plan);
+        Methods.logger.info("Click on the plan element");
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the Timetable button");
-        clickOnElement(Timetable);
+        Methods.logger.info("Click on the Timetable button");
+        methods.clickOnElement(Timetable);
         Thread.sleep(7000);
-        logger.info("Click on the timetable privacy");
-        clickOnElement(timetableprivacy);
-        Thread.sleep(4000);
-        logger.info("Click on allow all button");
-        scrollIntoViewAndClick(AllowAll);
-        Thread.sleep(5000);
-        logger.info("Click Done button in the cookies privacy pop up");
-        scrollIntoViewAndClick(Done);
-        Thread.sleep(6000);
-        logger.info("Timetable element is present");
-        elementIsPresent(timetableElement);
-        logger.info("Click <- to go back to home page");
-        driver.navigate().to("https://www.ryanair.com/gb/en");
+        Methods.logger.info("Timetable element is present");
+        methods.elementIsPresent(timetableElement);
+        methods.goBack();
         Thread.sleep(5000);
     }
 
     public void inThePlanMenuOptionClickOnTrySomewhereNew() throws InterruptedException {
-        logger.info("Click on the plan element");
-        clickOnElement(plan);
+        Methods.logger.info("Click on the plan element");
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on Try Something New button");
-        clickOnElement(TrySomethingNew);
+        Methods.logger.info("Click on Try Something New button");
+        methods.clickOnElement(TrySomethingNew);
         Thread.sleep(5000);
-        logger.info("Click Try Something New privacy button");
-        clickOnElement(somethingPrivacy);
+        Methods.logger.info("Click Try Something New privacy button");
+        methods.clickOnElement(somethingPrivacy);
         Thread.sleep(5000);
-        logger.info("Try Something New element is present");
-        elementIsPresent(somethingElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Try Something New element is present");
+        methods.elementIsPresent(somethingElement);
+        methods.goBack();
         Thread.sleep(5000);
-        logger.info("Click on the Home page button");
-        clickOnElement(privacyButtonHomePage);
+        Methods.logger.info("Click on the Home page privacy button");
+        methods.clickOnElement(privacyButtonHomePage);
         Thread.sleep(5000);
-        logger.info("Click allow all button");
-        scrollIntoViewAndClick(AllowAll);
+        methods.scrollIntoViewAndClick(AllowAll, "Allow all button in the cookie privacy pop up");
         Thread.sleep(5000);
-        logger.info("Click Done button in the cookies privacy pop up");
-        scrollIntoViewAndClick(Done);
+        methods.scrollIntoViewAndClick(Done,"Done button in the cookies privacy pop up");
     }
 
     public void inThePlanMenuOptionClickGroupTravel() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the Group Travel button");
-        clickOnElement(GroupTravel);
+        Methods.logger.info("Click on the Group Travel button");
+        methods.clickOnElement(GroupTravel);
         Thread.sleep(5000);
-        logger.info("Group Travel element is present");
-        elementIsPresent(GroupTravelElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Group Travel element is present");
+        methods.elementIsPresent(GroupTravelElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnTheOnlineTravelPirateScams() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the Online Pirate button");
-        clickOnElement(OnlinePirate);
+        Methods.logger.info("Click on the Online Travel Pirate Scams button");
+        methods.clickOnElement(OnlinePirate);
         Thread.sleep(5000);
-        logger.info("Online Pirate element is present");
-        elementIsPresent(OnlinePirateElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Online Travel Pirate Scams element is present");
+        methods.elementIsPresent(OnlinePirateElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickCustomerTestimonials() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on Testimonials element");
-        clickOnElement(Testimonials);
+        Methods.logger.info("Click on Testimonials element");
+        methods.clickOnElement(Testimonials);
         Thread.sleep(5000);
-        logger.info("Testimonials element is present");
-        elementIsPresent(TestimonialsElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Testimonials element is present");
+        methods.elementIsPresent(TestimonialsElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickFlightEssentials() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on Flight Essentials button");
-        clickOnElement(flightEssentials);
+        Methods.logger.info("Click on Flight Essentials button");
+        methods.clickOnElement(flightEssentials);
         Thread.sleep(5000);
-        logger.info("Flight Essentials element is present");
-        elementIsPresent(flightEssentialsElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Flight Essentials element is present");
+        methods.elementIsPresent(flightEssentialsElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnFareBundles() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on Fare Bundles button");
-        clickOnElement(fareBundles);
+        Methods.logger.info("Click on Fare Bundles button");
+        methods.clickOnElement(fareBundles);
         Thread.sleep(5000);
-        logger.info("Fare Bundles element is present");
-        elementIsPresent(fareBundlesElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Fare Bundles element is present");
+        methods.elementIsPresent(fareBundlesElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnSearchCarHire() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the Search Cars button");
-        clickOnElement(searchCars);
+        Methods.logger.info("Click on the Search Cars button");
+        methods.clickOnElement(searchCars);
         Thread.sleep(5000);
-        logger.info("Search Cars element is present");
-        elementIsPresent(searchCarsElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Search Cars element is present");
+        methods.elementIsPresent(searchCarsElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnSearchRooms() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the Search Rooms button");
-        clickOnElement(searchRooms);
+        Methods.logger.info("Click on the Search Rooms button");
+        methods.clickOnElement(searchRooms);
         Thread.sleep(5000);
-        logger.info("Search Room element is present");
-        elementIsPresent(searchRoomsElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Search Room element is present");
+        methods.elementIsPresent(searchRoomsElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnSearchEventsAndActivities() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on search event button");
-        clickOnElement(searchEvents);
+        Methods.logger.info("Click on search event button");
+        methods.clickOnElement(searchEvents);
         Thread.sleep(5000);
-        logger.info("Search element is present");
-        elementIsPresent(searchEventsElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Search element is present");
+        methods.elementIsPresent(searchEventsElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnSearchParking() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the Search Parking button");
-        clickOnElement(searchParking);
+        Methods.logger.info("Click on the Search Parking button");
+        methods.clickOnElement(searchParking);
         Thread.sleep(5000);
-        logger.info("Search Parking element is present");
-        elementIsPresent(searchParkingElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Search Parking element is present");
+        methods.elementIsPresent(searchParkingElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnSearchPrivateTransfers() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the Private Transfers button");
-        clickOnElement(privateTransfers);
+        Methods.logger.info("Click on the Private Transfers button");
+        methods.clickOnElement(privateTransfers);
         Thread.sleep(5000);
-        logger.info("Private Transfers element is present");
-        elementIsPresent(privateTransfersElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Private Transfers element is present");
+        methods.elementIsPresent(privateTransfersElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnSearchBusAndTrains() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the Bus and Train button");
-        clickOnElement(busAndTrain);
+        Methods.logger.info("Click on the Bus and Train button");
+        methods.clickOnElement(busAndTrain);
         Thread.sleep(5000);
-        logger.info("Bus and Train element is present");
-        elementIsPresent(busAndTrainElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Bus and Train element is present");
+        methods.elementIsPresent(busAndTrainElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnRyanairGiftCards() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the Gift Card button");
-        clickOnElement(ryanairGiftCard);
+        Methods.logger.info("Click on the Gift Card button");
+        methods.clickOnElement(ryanairGiftCard);
         Thread.sleep(5000);
-        logger.info("Gift Card element is present");
-        elementIsPresent(ryanairGiftCardElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("Gift Card element is present");
+        methods.elementIsPresent(ryanairGiftCardElement);
+        methods.goBack();
     }
 
     public void inThePlanMenuOptionClickOnOnboardServices() throws InterruptedException {
-        logger.info("Click on the plan element");
+        Methods.logger.info("Click on the plan element");
         Thread.sleep(5000);
-        clickOnElement(plan);
+        methods.clickOnElement(plan);
         Thread.sleep(5000);
-        logger.info("Click on the On Board Service button");
-        clickOnElement(onBoardServices);
+        Methods.logger.info("Click on the On Board Service button");
+        methods.clickOnElement(onBoardServices);
         Thread.sleep(5000);
-        logger.info("On board service element is present");
-        elementIsPresent(onBoardServicesElement);
-        logger.info("Click <- to go back to home page");
-        goBack();
+        Methods.logger.info("On board service element is present");
+        methods.elementIsPresent(onBoardServicesElement);
+        methods.goBack();
     }
 
-    public void inTheLanguageMenuOptionClickOnAustriaGerman() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Austrian German button");
-        clickOnElement(AustriaGerman);
-        logger.info("Language has changed");
-        elementIsPresent(AustriaGermanElement);
+    public void inTheLanguageMenuOption(String Language) {
+        switch (Language){
+            //case "": changelang();
+            case "austria":changelang(AustriaGerman,AustriaGermanElement,"Austria(German)");break;
+            case "belgium dutch":changelang(BelgiumDutch,BelgiumDutchElement,"Belgium(Dutch)");break;
+            case "belgium french":changelang(BelgiumFrench,BelgiumFrenchElement,"Belgium(French)");break;
+            case "bosnia":changelang(BosniaEnglish,BosniaEnglishElement,"Bosnia(English)");break;
+            case "bulgaria":changelang(BulgariaBulgarian,BulgariaBulgarianElement,"Bulgaria(Bulgarian)");break;
+            case "china":changelang(ChinaChinese,ChinaChineseElement,"China(Chinese)");break;
+            case "croatia":changelang(CroatiaEnglish,CroatiaEnglishElement,"Croatia(English)");break;
+            case "cyprus":changelang(CyprusEnglish,CyprusEnglishElement,"Cyprus(English)");break;
+            case "czech":changelang(CzechRepublicCzech,CzechRepublicCzechElement,"Czech Republic(Czech)");break;
+            case "denmark":changelang(DenmarkDanish,DenmarkDanishElement,"Denmark(Danish)");break;
+            case "estonia":changelang(EstoniaEnglish,EstoniaEnglishElement,"Estonia(English)");break;
+            case "finland":changelang(FinlandEnglish,FinlandEnglishElement,"Finland(English)");break;
+            case "france":changelang(FranceFrench,FranceFrenchElement,"France(French)");break;
+            case "germany":changelang(GermanyGerman,GermanyGermanElement,"Germany(German)");break;
+            case "great britain":changelang(GreatBritainEnglish,GreatBritainEnglishElement,"Great Britain(English)");break;
+            case "greece":changelang(GreeceGreek,GreeceGreekElement,"Greece(Greek)");break;
+            case "hungary":changelang(HungaryHungarian,HungaryHungarianElement,"Hungary(Hungarian)");break;
+            case "ireland":changelang(IrelandEnglish,IrelandEnglishElement,"Ireland(English)");break;
+            case "italy": changelang(ItalyItalian,ItalyItalianElement,"Italy(Italian)");break;
+            case "latvia english":changelang(LatviaEnglish,LatviaEnglishElement,"Latvia(English)");break;
+            case "latvia latvian":changelang(LatviaLatvian,LatviaLatvianElement,"Latvia(Latvian)");break;
+            case "lithuania":changelang(LithuaniaLithuanian,LithuaniaLithuanianElement,"Lithuania(Lithuanian)");break;
+            case "luxembourg":changelang(LuxembourgFrench,LuxembourgFrenchElement,"Luxembourg(French)");break;
+            case "malta":changelang(MaltaEnglish,MaltaEnglishElement,"Malta(English)");break;
+            case "montenegro":changelang(MontenegroEnglish,MontenegroEnglishElement,"Montenegro(English)");break;
+            case "morocco":changelang(MoroccoFrench,MoroccoFrenchElement,"Morocco(French)");break;
+            case "netherlands":changelang(NetherlandsDutch,NetherlandsDutchElement,"Netherlands(Dutch)");break;
+            case "norway":changelang(NorwayNorwegian,NorwayNorwegianElement,"Norway(Norwegian)");break;
+            case "poland":changelang(PolandPolish,PolandPolishElement,"Poland(Polish)");break;
+            case "portugal":changelang(PortugalPortuguese,PortugalPortugueseElement,"Portugal(Portuguese)");break;
+            case "romania":changelang(RomaniaRomanian,RomaniaRomanianElement,"Romania(Romanian)");break;
+            case "serbia":changelang(SerbiaEnglish,SerbiaEnglishElement,"Serbia(English)");break;
+            case "slovakia":changelang(SlovakiaEnglish,SlovakiaEnglishElement,"Slovakia(English)");break;
+            case "spain catalan":changelang(SpainCatalan,SpainCatalanElement,"Spain(Catalan)");break;
+            case "spain spanish":changelang(SpainSpanish,SpainSpanishElement,"Spain(Spanish)");break;
+            case "sweden":changelang(SwedenSwedish,SwedenSwedishElement,"Sweden(Swedish)");break;
+            case "turkey":changelang(TurkeyEnglish,TurkeyEnglishElement,"Turkey(English)");break;
+            case "ukraine":changelang(UkraineUkrainian,UkraineUkrainianElement,"Ukraine(Ukrainian)");break;
+            case "united states": changelang(UnitedStatesEnglish,UnitedStatesEnglishElement,"United States(English)");break;
+        }
+    }
+    public void changelang(By language, By laguageConfirmation, String text){
+        Methods.logger.info("Click on the Language button");
+        methods.clickOnElement(languageMenu);
+        Methods.logger.info("Click on the "+text+ "button");
+        methods.clickOnElement(language);
+        Methods.logger.info("Language has changed");
+        methods.elementIsPresent(laguageConfirmation);
     }
 
-    public void inTheLanguageMenuOptionClickOnBelgiumDutch() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Belgium Dutch button");
-        clickOnElement(BelgiumDutch);
-        logger.info("Language has changed");
-        elementIsPresent(BelgiumDutchElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnBelgiumFrench() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Belgium French button");
-        clickOnElement(BelgiumFrench);
-        logger.info("Language has changed");
-        elementIsPresent(BelgiumFrenchElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnBosniaEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Bosnia English button");
-        clickOnElement(BosniaEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(BosniaEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnBulgariaBulgarian() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Bulgaria Bulgarian button");
-        clickOnElement(BulgariaBulgarian);
-        logger.info("Language has changed");
-        elementIsPresent(BulgariaBulgarianElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnChinaChinese() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the China Chinese button");
-        clickOnElement(ChinaChinese);
-        logger.info("Language has changed");
-        elementIsPresent(ChinaChineseElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnCroatiaEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Croatia English button");
-        clickOnElement(CroatiaEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(CroatiaEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnCyprusEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Cyprus English button");
-        clickOnElement(CyprusEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(CyprusEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnCzechRepublicCzech() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Czech Republic Czech button");
-        clickOnElement(CzechRepublicCzech);
-        logger.info("Language has changed");
-        elementIsPresent(CzechRepublicCzechElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnDenmarkDanish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Denmark Danish button");
-        clickOnElement(DenmarkDanish);
-        logger.info("Language has changed");
-        elementIsPresent(DenmarkDanishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnEstoniaEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Estonia English button");
-        clickOnElement(EstoniaEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(EstoniaEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnFinlandEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Finland English button");
-        clickOnElement(FinlandEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(FinlandEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnFranceFrench() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the France French button");
-        clickOnElement(FranceFrench);
-        logger.info("Language has changed");
-        elementIsPresent(FranceFrenchElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnGermanyGerman() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Germany German button");
-        clickOnElement(GermanyGerman);
-        logger.info("Language has changed");
-        elementIsPresent(GermanyGermanElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnGreatBritainEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Great Britain English button");
-        clickOnElement(GreatBritainEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(GreatBritainEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnGreeceGreek() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Greece Greek button");
-        clickOnElement(GreeceGreek);
-        logger.info("Language has changed");
-        elementIsPresent(GreeceGreekElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnHungaryHungarian() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Hungary Hungarian button");
-        clickOnElement(HungaryHungarian);
-        logger.info("Language has changed");
-        elementIsPresent(HungaryHungarianElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnIrelandEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Ireland English button");
-        clickOnElement(IrelandEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(IrelandEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnItalyItalian() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Italy Italian button");
-        clickOnElement(ItalyItalian);
-        logger.info("Language has changed");
-        elementIsPresent(ItalyItalianElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnLatviaEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click and the Latvia English button");
-        clickOnElement(LatviaEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(LatviaEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnLatviaLatvian() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Latvia Latvian button");
-        clickOnElement(LatviaLatvian);
-        logger.info("Language has changed");
-        elementIsPresent(LatviaLatvianElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnLithuaniaLithuanian() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Lithuania Lithuanian button");
-        clickOnElement(LithuaniaLithuanian);
-        logger.info("Language has changed");
-        elementIsPresent(LithuaniaLithuanianElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnLuxembourgFrench() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Luxembourg French button");
-        clickOnElement(LuxembourgFrench);
-        logger.info("Language has changed");
-        elementIsPresent(LuxembourgFrenchElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnMaltaEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Malta English button");
-        clickOnElement(MaltaEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(MaltaEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnMontenegroEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Montenegro English button");
-        clickOnElement(MontenegroEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(MontenegroEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnMoroccoFrench() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Morocco French button");
-        clickOnElement(MoroccoFrench);
-        logger.info("Language has changed");
-        elementIsPresent(MoroccoFrenchElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnNetherlandsDutch() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Netherlands Dutch button");
-        clickOnElement(NetherlandsDutch);
-        logger.info("Language has changed");
-        elementIsPresent(NetherlandsDutchElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnNorwayNorwegian() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Norway Norwegian button");
-        clickOnElement(NorwayNorwegian);
-        logger.info("Language has changed");
-        elementIsPresent(NorwayNorwegianElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnPolandPolish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Poland Polish button");
-        clickOnElement(PolandPolish);
-        logger.info("Language has changed");
-        elementIsPresent(PolandPolishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnPortugalPortuguese() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Portugal Portuguese button");
-        clickOnElement(PortugalPortuguese);
-        logger.info("Language has changed");
-        elementIsPresent(PortugalPortugueseElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnRomaniaRomanian() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click in the Romania Romanian button");
-        clickOnElement(RomaniaRomanian);
-        logger.info("Language has changed");
-        elementIsPresent(RomaniaRomanianElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnSerbiaEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Serbia English button");
-        clickOnElement(SerbiaEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(SerbiaEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnSlovakiaEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Slovakia English button");
-        clickOnElement(SlovakiaEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(SlovakiaEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnSpainCatalan() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Spain Catalan button");
-        clickOnElement(SpainCatalan);
-        logger.info("Language has changed");
-        elementIsPresent(SpainCatalanElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnSpainSpanish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Spain Spanish button");
-        clickOnElement(SpainSpanish);
-        logger.info("Language has changed");
-        elementIsPresent(SpainSpanishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnSwedenSwedish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Sweden Swedish button");
-        clickOnElement(SwedenSwedish);
-        logger.info("Language has changed");
-        elementIsPresent(SwedenSwedishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnTurkeyEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Turkey English button");
-        clickOnElement(TurkeyEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(TurkeyEnglishElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnUkraineUkrainian() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the Ukraine Ukrainian button");
-        clickOnElement(UkraineUkrainian);
-        logger.info("Language has changed");
-        elementIsPresent(UkraineUkrainianElement);
-    }
-
-    public void inTheLanguageMenuOptionClickOnUnitedStatesEnglish() {
-        logger.info("Click on the Language button");
-        clickOnElement(languageMenu);
-        logger.info("Click on the United States English button");
-        clickOnElement(UnitedStatesEnglish);
-        logger.info("Language has changed");
-        elementIsPresent(UnitedStatesEnglishElement);
-    }
-
-    public void clickOnLogoForRyanAirInTheUpperLeftCorner() {
-        logger.info("Click on the Ryanair logo");
-        clickOnElement(logoForRyanAir);
-    }
 
     public void checkTheReturnCheckBox(){
-        logger.info("Return check box is present");
-        elementIsPresent(returnCheckBox);
-        logger.info("Click on the return check box");
-        clickOnElement(returnCheckBox);
+        Methods.logger.info("Return check box is present");
+        methods.elementIsPresent(returnCheckBox);
+        Methods.logger.info("Click on the return check box");
+        methods.clickOnElement(returnCheckBox);
     }
 
     public void inTheFromFieldSelectNisInFromOption(){
-        logger.info("Open from dropdown menu");
-        clickOnElement(fromDropdown);
-        logger.info("In the countries select Serbia");
-        clickOnElement(clickSerbia);
-        logger.info("In the airport list select Nis");
-        clickOnElement(clickNis);
+        Methods.logger.info("Open from dropdown menu");
+        methods.clickOnElement(fromDropdown);
+        Methods.logger.info("In the countries select Serbia");
+        methods.clickOnElement(clickSerbia);
+        Methods.logger.info("In the airport list select Nis");
+        methods.clickOnElement(clickNis);
     }
 
     public void inTheToFieldSelectCorfu(){
-        logger.info("Select Greece in the destination dropdown menu");
-        clickOnElement(clickGreece);
-        logger.info("Select Corfu in the airport list");
-        clickOnElement(clickCorfu);
+        Methods.logger.info("Select Greece in the destination dropdown menu");
+        methods.clickOnElement(clickGreece);
+        Methods.logger.info("Select Corfu in the airport list");
+        methods.clickOnElement(clickCorfu);
     }
 
     public void selectDatesOfTravel(){
-        logger.info("select june 30 as depart day");
-        clickOnElement(selectJune30th);
-        logger.info("Select July 28 as return day");
-        clickOnElement(selectJuly28th);
+        Methods.logger.info("select june 30 as depart day");
+        methods.clickOnElement(selectJune30th);
+        Methods.logger.info("Select July 28 as return day");
+        methods.clickOnElement(selectJuly28th);
     }
 
     public void selectPassengers(){
-        logger.info("Check that one adult passenger is preselected");
-        elementIsPresent(checkPassenger);
-        logger.info("In the passenger dropdown menu select done");
-        clickOnElement(buttonDone);
+        Methods.logger.info("Check that one adult passenger is preselected");
+        methods.elementIsPresent(checkPassenger);
+        Methods.logger.info("In the passenger dropdown menu select done");
+        methods.clickOnElement(buttonDone);
     }
 
     public void clickSearchButton(){
-        logger.info("Click Search button");
-        clickOnElement(searchButton);
+        Methods.logger.info("Click Search button");
+        methods.clickOnElement(searchButton);
     }
-
-
     //room booking methods
     public void clickHotelsButton() throws InterruptedException {
-        logger.info("Click on Hotels button in the menu");
-        clickOnElement(HotelsButton);
+        Methods.logger.info("Click on Hotels button in the menu");
+        methods.clickOnElement(HotelsButton);
         Thread.sleep(5000);
     }
-
     public void inputLondonAsDestination() throws IOException, InterruptedException {
-        clearTextBox(destinationTextBox);
-        logger.info("In the destination text box input London");
-        clickOnElement(destinationTextBox);
-        String Town = getFromProperties("Town");
-        type(destinationTextBox,Town);
+        methods.clearTextBox(destinationTextBox);
+        Methods.logger.info("Click on the destination text box element");
+        methods.clickOnElement(destinationTextBox);
+        String Town = methods.getFromProperties("Town");
+        methods.type(destinationTextBox,Town);
         Thread.sleep(8000);
-        logger.info("in the drop down menu select London,United Kingdom");
-        scrollIntoViewAndClickItInvisible(London2);
+        methods.scrollIntoViewAndClickItUnreachableElement(London2,"London,United Kingdom");
         Thread.sleep(3000);
     }
     public void  selectDatesOfRoomBooking() throws InterruptedException {
-        logger.info("Open choose date of travel dropdown menu");
-        scrollIntoViewAndClickItInvisible(chooseDateOfTravel);
+        methods.scrollIntoViewAndClickItUnreachableElement(chooseDateOfTravel,"choose date of travel dropdown menu");
         Thread.sleep(4000);
-        logger.info("Select June 30th as departure day");
-        scrollIntoViewAndClickItInvisible(june30);
+        methods.scrollIntoViewAndClickItUnreachableElement(june30,"June 30th as departure day");
         Thread.sleep(8000);
-        logger.info("Select July 10th as return day");
-        scrollIntoViewAndClickItInvisible(july10);
+        methods.scrollIntoViewAndClickItUnreachableElement(july10,"July 10th as return day");
         Thread.sleep(5000);
     }
-
     public void selectNumberOfRoomOccupants() throws InterruptedException {
-        logger.info("Click + sign to add additional passenger");
         Thread.sleep(4000);
-        scrollIntoViewAndClickItInvisible(passengerAdd);
-        logger.info("Click Done");
+        methods.scrollIntoViewAndClickItUnreachableElement(passengerAdd,"+ sign to add additional passenger");
         Thread.sleep(3000);
-        scrollIntoViewAndClickItInvisible(done);
+        methods.scrollIntoViewAndClickItUnreachableElement(done,"Done button");
     }
-
     public void clickRoomSearchButton() throws InterruptedException {
-        logger.info("Click on the search button");
+        Methods.logger.info("Click on the search button");
         Thread.sleep(4000);
-        clickOnElement(SearchButton);
+        methods.clickOnElement(SearchButton);
         Thread.sleep(2000);
     }
-
-
-
     //ticket booking methods
-
     public void clickEventandActivitiesButton(){
-        clickOnElement(clickEvents);
+        Methods.logger.info("Click on Event and Activities button");
+        methods.clickOnElement(clickEvents);
     }
-
-
-
     //car hire methods
     public void clickCarHireButton(){
-        clickOnElement(clickCarHire);
+        Methods.logger.info("Click on the Car Hire button");
+        methods.clickOnElement(clickCarHire);
     }
 }

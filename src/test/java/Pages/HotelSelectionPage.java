@@ -4,9 +4,10 @@ import Utils.Methods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HotelSelectionPage extends Methods {
+public class HotelSelectionPage{
 
     public WebDriver driver;
+    public Methods methods;
 
     public HotelSelectionPage hotelSelectionPage (WebDriver driver) {
         this.driver=driver;
@@ -18,20 +19,12 @@ public class HotelSelectionPage extends Methods {
 
     public void clickOnRafflesLondonAtTheOWL() throws InterruptedException {
         Thread.sleep(2000);
-        scrollDown();
+        methods.scrollDown();
         Thread.sleep(2000);
-        scrollDown();
+        methods.scrollDown();
         Thread.sleep(3000);
-        scrollDown();
+        methods.scrollDown();
         Thread.sleep(10000);
-        scrollIntoViewAndClickItInvisible(Raffles);
+        methods.scrollIntoViewAndClickItUnreachableElement(Raffles,"Raffles At The OWL hotel");
     }
-
-
-
-
-
-
-
-
 }

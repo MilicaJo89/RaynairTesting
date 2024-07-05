@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class BookingAFlightFromNisToCorfu extends Methods {
+public class BookingAFlightFromNisToCorfu {
 
 
     @Test
@@ -30,14 +30,18 @@ public class BookingAFlightFromNisToCorfu extends Methods {
         feesPage.selectMsInTheTitleDropdownMenu();
         feesPage.inputPassengerInformation();
         feesPage.clickContinueButton();
+        Thread.sleep(3000);
         feesPage.selectSeatsOnFlightFromNisToCorfu();
         feesPage.handleSameSeatPopUp();
         feesPage.selectSeatOnFlightFromCorfuToNis();
         feesPage.clickOnFlightsContinueButton();
-        feesPage.clickAddFastTrack();
-        feesPage.selectPriorityPlusTwoCabinBags();
         Thread.sleep(5000);
+        feesPage.clickAddFastTrack();
+        Thread.sleep(3000);
+        feesPage.selectPriorityPlusTwoCabinBags();
+        Thread.sleep(6000);
         feesPage.clickBagContinueButton();
+        Thread.sleep(4000);
         feesPage.arrangeBusInCorfuOption();
         feesPage.clickOnTransportationContinueButton();
     }
