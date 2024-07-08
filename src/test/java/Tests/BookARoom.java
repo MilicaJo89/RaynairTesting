@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class BookARoom extends Methods {
+public class BookARoom {
 
 
     @Test

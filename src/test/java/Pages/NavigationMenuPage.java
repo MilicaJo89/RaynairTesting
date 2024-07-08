@@ -24,10 +24,10 @@ public class NavigationMenuPage {
         this.driver=driver;
         return this;
     }
-    public NavigationMenuPage clickOnLogoForRyanAirInTheUpperLeftCorner() {
+    public void clickOnLogoForRyanAirInTheUpperLeftCorner() {
         Methods.logger.info("Click on the Ryanair logo");
         methods.clickOnElement(logoForRyanAir);
-        return this;
+        new NavigationMenuPage();
     }
 
     public void clickHelpButton() throws InterruptedException {
@@ -35,8 +35,7 @@ public class NavigationMenuPage {
         methods.clickOnElement(clickHelp);
         Thread.sleep(3000);
         methods.driverSwitch();
-        Methods.logger.info("Help page element is present");
-        methods.elementIsPresent(query);
+        methods.elementIsPresent(query,"Help page element ");
         methods.driverSwitchBack();
         methods.closeTab();
     }
@@ -45,16 +44,14 @@ public class NavigationMenuPage {
         Methods.logger.info("Click on the myBooking element");
         methods.clickOnElement(myBooking);
         Thread.sleep(5000);
-        Methods.logger.info("Email element is present");
-        methods.elementIsPresent(emailElement);
+        methods.elementIsPresent(emailElement,"MyBooking element ");
         methods.goBack();
     }
 
     public void clickOnSignUpButton() throws InterruptedException {
         Methods.logger.info("Click sign up element");
         methods.clickOnElement(signUp);
-        Methods.logger.info("Element is present");
-        methods.elementIsPresent(signInElement);
+        methods.elementIsPresent(signInElement,"Sign in element");
         Thread.sleep(3000);
         Methods.logger.info("Click X to close the pop up window");
         methods.clickOnElement(xMarksTheSpot);
@@ -63,8 +60,7 @@ public class NavigationMenuPage {
     public void clickOnLoginButton() throws InterruptedException {
         Methods.logger.info("Click Login button");
         methods.clickOnElement(logIn);
-        Methods.logger.info("Login element is present");
-        methods.elementIsPresent(signInElement);
+        methods.elementIsPresent(signInElement,"Login element");
         Thread.sleep(3000);
         Methods.logger.info("Click X to close the pop up window");
         methods.clickOnElement(xMarksTheSpot);

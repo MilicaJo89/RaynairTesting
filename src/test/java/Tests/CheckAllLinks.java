@@ -13,6 +13,7 @@ public class CheckAllLinks {
         HomePage homePage = new HomePage();
         NavigationMenuPage navigationMenuPage = new NavigationMenuPage();
 
+
         homePage.siteLoading();
         navigationMenuPage.clickHelpButton();
         homePage.clickSpecialAssistance();
@@ -82,6 +83,7 @@ public class CheckAllLinks {
         homePage.inTheLanguageMenuOption("united states");
 
         navigationMenuPage.clickOnLogoForRyanAirInTheUpperLeftCorner();
+
 
     }
 }

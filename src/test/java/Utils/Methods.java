@@ -34,11 +34,13 @@ public class Methods {
             wait.until(presenceOfElementLocated(xpath)).click();
         }
     }
-    public void elementIsPresent(By xpath) {
+    public void elementIsPresent(By xpath, String text) {
+        logger.info(text+" is present");
         wait.until(visibilityOf(driver.findElement(xpath))).isDisplayed();
     }
     //firefox testing
     public WebDriver setup() {
+        logger.info("Driver sets up");
         System.setProperty("webdriver.geckodriver", "\"C:\\Users\\milicaj\\Downloads\\geckodriver.exe\"");
         driver = new FirefoxDriver();
         driver.get("https://www.ryanair.com/gb/en");
@@ -68,6 +70,7 @@ public class Methods {
         driver.switchTo().window(tab.get(1));
     }
     public void checkUrlLink(){
+        Methods.logger.info("Check url link");
         driver.getCurrentUrl().matches("https://help.ryanair.com/hc/en-gb/categories/12489466690833");
     }
     public void driverSwitchBack(){
@@ -116,6 +119,7 @@ public class Methods {
         element.click();
     }
     public WebDriver setUp() {
+        logger.info("Driver sets up");
         System.setProperty("webdriver.chromedriver", "\"C:\\Users\\milicaj\\Downloads\\chromedriver.exe\"");
         Methods.driver = new ChromeDriver();
         Methods.driver.get("https://www.ryanair.com/gb/en");

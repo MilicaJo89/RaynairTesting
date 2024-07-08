@@ -8,7 +8,7 @@ import java.io.IOException;
 public class HomePage {
 
     public WebDriver driver;
-    public Methods methods = new Methods();
+    private Methods methods = new Methods();
 
     public HomePage homePage(WebDriver driver) {
         this.driver=driver;
@@ -155,8 +155,8 @@ public class HomePage {
     public By destinationTextBox = By.xpath("//input[@id='input-button__locations-or-properties']");
     public By London2 = By.xpath("//div[@data-ref='location-item__name' and contains(.,'London, England')]");
     public By chooseDateOfTravel = By.xpath("//div[@data-ref='input-button__display-value']");
-    public By june30 = By.xpath("//div[@data-id='2024-06-30']");
-    public By july10 = By.xpath("//div[@data-id='2024-07-10']");
+    public By june30 = By.xpath("//div[@data-id='2024-07-30']");
+    public By july10 = By.xpath("//div[@data-id='2024-08-10']");
     public By passengerAdd = By.xpath("//div[@data-ref='counter.counter__increment']");
     public By done = By.xpath("//button[@class='rooms_done-button ry-button--anchor-blue ry-button--anchor']");
     public By SearchButton = By.xpath("//button[@class='rooms-search-widget__start-search ry-button--gradient-yellow']");
@@ -184,7 +184,6 @@ public class HomePage {
         methods.clickOnElement(specialAsistance);
         Thread.sleep(5000);
         methods.driverSwitch();
-        Methods.logger.info("Check url link");
         methods.checkUrlLink();
         methods.driverSwitchBack();
         methods.closeTab();
@@ -198,8 +197,7 @@ public class HomePage {
         Methods.logger.info("Click on FareFinder");
         methods.clickOnElement(fareFinder);
         Thread.sleep(5000);
-        Methods.logger.info("Cheap flights element is present");
-        methods.elementIsPresent(cheapFlightsTitle);
+        methods.elementIsPresent(cheapFlightsTitle,"Fare finder element");
         Thread.sleep(3000);
         methods.goBack();
     }
@@ -211,8 +209,7 @@ public class HomePage {
         Methods.logger.info("Click on Route map element");
         methods.clickOnElement(RouteMap);
         Thread.sleep(5000);
-        Methods.logger.info("Route Map element is present");
-        methods.elementIsPresent(routeElement);
+        methods.elementIsPresent(routeElement,"Route Map element");
         Thread.sleep(4000);
         methods.goBack();
     }
@@ -224,8 +221,7 @@ public class HomePage {
         Methods.logger.info("Click on Destination button");
         methods.clickOnElement(Destination);
         Thread.sleep(5000);
-        Methods.logger.info("Destination element is present");
-        methods.elementIsPresent(DestinationElement);
+        methods.elementIsPresent(DestinationElement,"Destinations element ");
         Thread.sleep(4000);
         methods.goBack();
         Thread.sleep(4000);
@@ -238,8 +234,7 @@ public class HomePage {
         Methods.logger.info("Click on the Timetable button");
         methods.clickOnElement(Timetable);
         Thread.sleep(7000);
-        Methods.logger.info("Timetable element is present");
-        methods.elementIsPresent(timetableElement);
+        methods.elementIsPresent(timetableElement,"Timetable element ");
         methods.goBack();
         Thread.sleep(5000);
     }
@@ -254,8 +249,7 @@ public class HomePage {
         Methods.logger.info("Click Try Something New privacy button");
         methods.clickOnElement(somethingPrivacy);
         Thread.sleep(5000);
-        Methods.logger.info("Try Something New element is present");
-        methods.elementIsPresent(somethingElement);
+        methods.elementIsPresent(somethingElement,"Try something new element ");
         methods.goBack();
         Thread.sleep(5000);
         Methods.logger.info("Click on the Home page privacy button");
@@ -274,8 +268,7 @@ public class HomePage {
         Methods.logger.info("Click on the Group Travel button");
         methods.clickOnElement(GroupTravel);
         Thread.sleep(5000);
-        Methods.logger.info("Group Travel element is present");
-        methods.elementIsPresent(GroupTravelElement);
+        methods.elementIsPresent(GroupTravelElement,"Group travel element ");
         methods.goBack();
     }
 
@@ -287,8 +280,7 @@ public class HomePage {
         Methods.logger.info("Click on the Online Travel Pirate Scams button");
         methods.clickOnElement(OnlinePirate);
         Thread.sleep(5000);
-        Methods.logger.info("Online Travel Pirate Scams element is present");
-        methods.elementIsPresent(OnlinePirateElement);
+        methods.elementIsPresent(OnlinePirateElement,"Online Travel Pirate Scams element ");
         methods.goBack();
     }
 
@@ -300,8 +292,7 @@ public class HomePage {
         Methods.logger.info("Click on Testimonials element");
         methods.clickOnElement(Testimonials);
         Thread.sleep(5000);
-        Methods.logger.info("Testimonials element is present");
-        methods.elementIsPresent(TestimonialsElement);
+        methods.elementIsPresent(TestimonialsElement,"Testimonials element ");
         methods.goBack();
     }
 
@@ -313,8 +304,7 @@ public class HomePage {
         Methods.logger.info("Click on Flight Essentials button");
         methods.clickOnElement(flightEssentials);
         Thread.sleep(5000);
-        Methods.logger.info("Flight Essentials element is present");
-        methods.elementIsPresent(flightEssentialsElement);
+        methods.elementIsPresent(flightEssentialsElement,"Flight Essentials element ");
         methods.goBack();
     }
 
@@ -326,8 +316,7 @@ public class HomePage {
         Methods.logger.info("Click on Fare Bundles button");
         methods.clickOnElement(fareBundles);
         Thread.sleep(5000);
-        Methods.logger.info("Fare Bundles element is present");
-        methods.elementIsPresent(fareBundlesElement);
+        methods.elementIsPresent(fareBundlesElement,"Fare Bundle element ");
         methods.goBack();
     }
 
@@ -339,8 +328,7 @@ public class HomePage {
         Methods.logger.info("Click on the Search Cars button");
         methods.clickOnElement(searchCars);
         Thread.sleep(5000);
-        Methods.logger.info("Search Cars element is present");
-        methods.elementIsPresent(searchCarsElement);
+        methods.elementIsPresent(searchCarsElement,"Search Car Hire element ");
         methods.goBack();
     }
 
@@ -352,8 +340,7 @@ public class HomePage {
         Methods.logger.info("Click on the Search Rooms button");
         methods.clickOnElement(searchRooms);
         Thread.sleep(5000);
-        Methods.logger.info("Search Room element is present");
-        methods.elementIsPresent(searchRoomsElement);
+        methods.elementIsPresent(searchRoomsElement,"Search Room element ");
         methods.goBack();
     }
 
@@ -362,11 +349,10 @@ public class HomePage {
         Thread.sleep(5000);
         methods.clickOnElement(plan);
         Thread.sleep(5000);
-        Methods.logger.info("Click on search event button");
+        Methods.logger.info("Click on Search Events And Activities button");
         methods.clickOnElement(searchEvents);
         Thread.sleep(5000);
-        Methods.logger.info("Search element is present");
-        methods.elementIsPresent(searchEventsElement);
+        methods.elementIsPresent(searchEventsElement,"Search Events And Activities element ");
         methods.goBack();
     }
 
@@ -378,8 +364,7 @@ public class HomePage {
         Methods.logger.info("Click on the Search Parking button");
         methods.clickOnElement(searchParking);
         Thread.sleep(5000);
-        Methods.logger.info("Search Parking element is present");
-        methods.elementIsPresent(searchParkingElement);
+        methods.elementIsPresent(searchParkingElement,"Search Parking element ");
         methods.goBack();
     }
 
@@ -388,11 +373,10 @@ public class HomePage {
         Thread.sleep(5000);
         methods.clickOnElement(plan);
         Thread.sleep(5000);
-        Methods.logger.info("Click on the Private Transfers button");
+        Methods.logger.info("Click on the Search Private Transfers button");
         methods.clickOnElement(privateTransfers);
         Thread.sleep(5000);
-        Methods.logger.info("Private Transfers element is present");
-        methods.elementIsPresent(privateTransfersElement);
+        methods.elementIsPresent(privateTransfersElement,"Search Private Transfers element ");
         methods.goBack();
     }
 
@@ -401,11 +385,10 @@ public class HomePage {
         Thread.sleep(5000);
         methods.clickOnElement(plan);
         Thread.sleep(5000);
-        Methods.logger.info("Click on the Bus and Train button");
+        Methods.logger.info("Click on the Search Bus and Train button");
         methods.clickOnElement(busAndTrain);
         Thread.sleep(5000);
-        Methods.logger.info("Bus and Train element is present");
-        methods.elementIsPresent(busAndTrainElement);
+        methods.elementIsPresent(busAndTrainElement,"Search Bus and Train element ");
         methods.goBack();
     }
 
@@ -414,11 +397,10 @@ public class HomePage {
         Thread.sleep(5000);
         methods.clickOnElement(plan);
         Thread.sleep(5000);
-        Methods.logger.info("Click on the Gift Card button");
+        Methods.logger.info("Click on the Ryanair Gift Card button");
         methods.clickOnElement(ryanairGiftCard);
         Thread.sleep(5000);
-        Methods.logger.info("Gift Card element is present");
-        methods.elementIsPresent(ryanairGiftCardElement);
+        methods.elementIsPresent(ryanairGiftCardElement,"Ryanair GiftCards element ");
         methods.goBack();
     }
 
@@ -430,8 +412,7 @@ public class HomePage {
         Methods.logger.info("Click on the On Board Service button");
         methods.clickOnElement(onBoardServices);
         Thread.sleep(5000);
-        Methods.logger.info("On board service element is present");
-        methods.elementIsPresent(onBoardServicesElement);
+        methods.elementIsPresent(onBoardServicesElement,"On board service element ");
         methods.goBack();
     }
 
@@ -484,14 +465,12 @@ public class HomePage {
         methods.clickOnElement(languageMenu);
         Methods.logger.info("Click on the "+text+ "button");
         methods.clickOnElement(language);
-        Methods.logger.info("Language has changed");
-        methods.elementIsPresent(laguageConfirmation);
+        methods.elementIsPresent(laguageConfirmation, "Element has changed language and it ");
     }
 
 
     public void checkTheReturnCheckBox(){
-        Methods.logger.info("Return check box is present");
-        methods.elementIsPresent(returnCheckBox);
+        methods.elementIsPresent(returnCheckBox,"Return check box element");
         Methods.logger.info("Click on the return check box");
         methods.clickOnElement(returnCheckBox);
     }
@@ -520,8 +499,7 @@ public class HomePage {
     }
 
     public void selectPassengers(){
-        Methods.logger.info("Check that one adult passenger is preselected");
-        methods.elementIsPresent(checkPassenger);
+        methods.elementIsPresent(checkPassenger,"One adult passenger element is preselected and it ");
         Methods.logger.info("In the passenger dropdown menu select done");
         methods.clickOnElement(buttonDone);
     }
